@@ -7,9 +7,17 @@ import React from 'react';
 const TodoList = props => {
     return (
         <div className='todo-list'>
-
+            {props.todos.map(todo => (
+                <Todo
+                    handleToggleComplete={props.handleToggleComplete}
+                    key={props.id}
+                    todo={todo}
+                />
+            ))};
         </div>
     );
 }
+
+
 
 export default TodoList;
