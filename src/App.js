@@ -54,7 +54,7 @@ class App extends React.Component {
 
 
  clearCompletedTodos = e => {
-   e.preventDefault()
+   e.preventDefault();
    let todos = this.state.todos.filter(todo => !todo.completed);
    this.setState({ todos });
  };
@@ -76,8 +76,6 @@ class App extends React.Component {
       </div>
     );
   }
-  
-
 }
 
   // you will need a place to store your state in this component.
