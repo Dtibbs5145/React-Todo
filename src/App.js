@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 import Todo from './components/TodoComponents/Todo';
@@ -37,29 +37,44 @@ class App extends React.Component {
     });
   };
 
+  changeTodo = e => this.setState({ [e.target.name]: e.target.value });
 
-  // clear = e => {
+  toggleTodoCompleted = id => {
+    let todos = this.state.todos.slice();
+    todos = todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+        return todo;
+      } else {
+        return todo;
+      }
+    });
+    this.setState({ todos });
+  };
 
-  // }
 
-  // completedTheTask = id => {
-  //   const co
-  //   todoList: {...this.state.todoList, }
-  // }
+ clearCompletedTodos = e => {
+   e.preventDefault()
+   let todos = this.state.todos.filter(todo => !todo.completed);
+   this.setState({ todos });
+ };
 
   render() {
     return (
       <div className='app-wrapper'>
       <Todo />
        <TodoList
-      value={this.state.todo}
+       handleToggleComplete={this.toggleTodoCompleted}
+        todos={this.state.todos}
       />
       <TodoForm
-      task={this.state[0].task}
-      addTodo={this.Todo}
+      value={this.state.todo}
+      handleTodoChange={this.changeTodo}
+      handleAddTodo={this.addTodo}
+      handleClearCompleted={this.clearCompletedTodos}
       />
       </div>
-    )
+    );
   }
   
 
