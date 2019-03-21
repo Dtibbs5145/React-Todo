@@ -19,8 +19,8 @@ class App extends React.Component {
           }
         ],
         todo: ''
-      }
-  };
+      };
+  }
 
   addTodo = e => {
     e.preventDefault();
@@ -60,7 +60,7 @@ class App extends React.Component {
     return (
       <div className='app-wrapper'>
        <TodoList
-       handleToggleComplete={this.toggleTodoCompleted}
+       handleToggleComplete={this.toggleTodoComplete}
         todos={this.state.todos}
       />
       <TodoForm
