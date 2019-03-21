@@ -1,8 +1,6 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
-// import Todo from './components/TodoComponents/Todo';
 
 class App extends React.Component {
   constructor() {
@@ -21,11 +19,11 @@ class App extends React.Component {
           }
         ],
         todo: ''
-      };
-  }
+      }
+  };
 
   addTodo = e => {
-    e.preventDefault()
+    e.preventDefault();
     const newTodo = {
       task: this.state.todo,
       id: Date.now(),
@@ -39,7 +37,7 @@ class App extends React.Component {
 
   changeTodo = e => this.setState({ [e.target.name]: e.target.value });
 
-  toggleTodoCompleted = id => {
+  toggleTodoComplete = id => {
     let todos = this.state.todos.slice();
     todos = todos.map(todo => {
       if (todo.id === id) {
@@ -48,21 +46,19 @@ class App extends React.Component {
       } else {
         return todo;
       }
-    });
+    })
     this.setState({ todos });
   };
 
-
- clearCompletedTodos = e => {
-   e.preventDefault();
-   let todos = this.state.todos.filter(todo => !todo.completed);
-   this.setState({ todos });
- };
+  clearCompletedTodos = e => {
+    e.preventDefault();
+    let todos = this.state.todos.filter(todo => !todo.completed);
+    this.setState({ todos });
+  };
 
   render() {
     return (
       <div className='app-wrapper'>
-      {/* <Todo /> */}
        <TodoList
        handleToggleComplete={this.toggleTodoCompleted}
         todos={this.state.todos}
@@ -78,8 +74,6 @@ class App extends React.Component {
   }
 }
 
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
-
+ 
 export default App;
+ 

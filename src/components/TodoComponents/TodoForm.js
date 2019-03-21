@@ -8,7 +8,7 @@ const TodoForm = props => {
                     type='text'
                     placeholder='Add Item'
                     name='todo'
-                    onChange={props.handleChanges}
+                    onChange={props.handleTodoChange}
                     value={props.value}
                 />
                 <h1>{props.task}</h1>

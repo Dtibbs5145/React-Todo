@@ -13,7 +13,7 @@ const TodoList = props => {
                     key={todo.id}
                     todo={todo}
                 />
-            ))};
+            ))}
         </div>
     );
 }
