@@ -2,7 +2,7 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
-import Todo from './components/TodoComponents/Todo';
+// import Todo from './components/TodoComponents/Todo';
 
 class App extends React.Component {
   constructor() {
@@ -62,7 +62,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='app-wrapper'>
-      <Todo />
+      {/* <Todo /> */}
        <TodoList
        handleToggleComplete={this.toggleTodoCompleted}
         todos={this.state.todos}
